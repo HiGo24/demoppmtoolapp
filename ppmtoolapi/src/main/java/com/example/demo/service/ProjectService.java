@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.domain.Project;
+import com.example.demo.repository.ProjectRepository;
+
+/**
+ * @author Govind
+ *
+ */
+@Service
+public class ProjectService {
+	@Autowired
+	private ProjectRepository projectrepository;
+	
+	public Project saveOrUpdate(Project project) {
+		
+		return ((CrudRepository<Project, Long>) projectrepository).save(project); 
+	}
+	
+
+}
