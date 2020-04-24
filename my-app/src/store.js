@@ -15,5 +15,5 @@ if (window.navigator.userAgent.includes("Chrome")) {
   );
 } else {
   store = createStore(rootReducer, compose(applyMiddleware(...middleware)));
-}
+} 
 export default store;
